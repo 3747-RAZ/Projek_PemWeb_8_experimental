@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Kopi Kita</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .menu-header {
+            height: 40vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), rgba(238, 238, 238, 1)),
+                        url('images/coffee-bg.jpg') center/cover;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            padding: 50px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            background: rgba(111, 78, 55, 0.9);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-family: 'Caveat', cursive;
+        }
+
+        .back-btn:hover {
+            background: rgba(139, 69, 19, 0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-btn">← Back to Home</a>
+    
+    <header class="menu-header">
+        <h1>Our Coffee Menu</h1>
+    </header>
+
+    <div class="menu-grid">
+        <div class="menu-item" onclick="showModal('espresso')">
+            <img src="images/espresso.png" alt="Espresso">
+            <div class="menu-item-content">
+                <h3>Espresso</h3>
+                <p>Our signature espresso is crafted from carefully selected coffee beans, roasted to perfection to bring out rich flavors and intense aroma.</p>
+                <p class="price">Rp 25.000</p>
+            </div>
+        </div>
+
+        <div class="menu-item" onclick="showModal('latte')">
+            <img src="images/latte.png" alt="Latte">
+            <div class="menu-item-content">
+                <h3>Latte</h3>
+                <p>Smooth espresso combined with steamed milk and a light layer of foam creates this coffee house classic.</p>
+                <p class="price">Rp 35.000</p>
+            </div>
+        </div>
+
+        <div class="menu-item" onclick="showModal('americano')">
+            <img src="images/americano.png" alt="Americano">
+            <div class="menu-item-content">
+                <h3>Americano</h3>
+                <p>Hot water poured over our premium espresso creates a light layer of crema in true European style.</p>
+                <p class="price">Rp 30.000</p>
+            </div>
+        </div>
+
+        <div class="menu-item" onclick="showModal('cappuccino')">
+            <img src="images/cappucino.png" alt="Cappuccino">
+            <div class="menu-item-content">
+                <h3>Cappuccino</h3>
+                <p>Equal parts espresso, steamed milk, and milk foam create this Italian classic.</p>
+                <p class="price">Rp 35.000</p>
+            </div>
+        </div>
+
+        <div class="menu-item" onclick="showModal('mocha')">
+            <img src="images/mocha.png" alt="Mocha">
+            <div class="menu-item-content">
+                <h3>Mocha</h3>
+                <p>A delightful blend of espresso, steamed milk, and rich chocolate syrup.</p>
+                <p class="price">Rp 38.000</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Coffee Details -->
+    <div id="coffee-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-details"></div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scroll to top when clicking back button
+        document.querySelector('.back-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            setTimeout(() => {
+                window.location.href = this.getAttribute('href');
+            }, 500);
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

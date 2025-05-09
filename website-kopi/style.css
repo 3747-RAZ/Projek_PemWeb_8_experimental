@@ -1,0 +1,352 @@
+:root {
+    --primary-color: #333;
+    --secondary-color: #666;
+    --background-color: #f4f4f4;
+    --text-color: #222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Caveat', cursive;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Section Spacing */
+.section-spacing {
+    margin: 100px 0;
+    padding: 50px 0;
+    position: relative;
+}
+
+.section-spacing::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background-image: url('images/coffee-bean.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+}
+
+.navbar li {
+    margin: 20px 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    display: block;
+    transition: all 0.5s ease;
+    font-size: 1.2rem;
+}
+
+.navbar a:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+}
+
+/* Coffee Cards */
+.coffee-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 20px;
+    text-align: center;
+}
+
+.coffee-image-container {
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.coffee-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.coffee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.coffee-card:hover img {
+    transform: scale(1.1);
+}
+
+.coffee-card h3 {
+    font-size: 1.8rem;
+    margin: 15px 0;
+}
+
+.coffee-card p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.view-more-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.view-more-btn {
+    display: inline-block;
+    background: #6F4E37;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+}
+
+.view-more-btn:hover {
+    background: #8B4513;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Hero Section with transition */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), rgba(238, 238, 238, 1)),
+                url('images/coffee-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+/* Favorites Section with improved spacing */
+.favorites {
+    padding: 120px 40px;
+    background-color: #eee;
+    margin: 80px 0;
+}
+
+.coffee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.coffee-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 30px;
+    text-align: center;
+    border: 2px solid #d3d3d3;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.coffee-image-container {
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    background: #f5f5f5;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+.coffee-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.coffee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.coffee-card:hover img {
+    transform: scale(1.1);
+}
+
+.coffee-card h3 {
+    font-size: 1.8rem;
+    margin: 15px 0;
+}
+
+.coffee-card p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.view-more-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.view-more-btn {
+    display: inline-block;
+    background: #6F4E37;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+}
+
+.view-more-btn:hover {
+    background: #8B4513;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* About & Contact Sections with improved spacing */
+.about, .contact {
+    padding: 100px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 80px auto;
+}
+
+/* Menu page styles */
+.menu-item {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #d3d3d3;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    padding: 30px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.menu-item-content {
+    padding: 30px;
+}
+
+.coffee-details {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+}
+
+.detail-section {
+    margin: 15px 0;
+}
+
+.detail-section h3 {
+    color: #6F4E37;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.detail-section pre {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    font-family: 'Caveat', cursive;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Contact Form Styling */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contact input,
+.contact textarea {
+    padding: 15px;
+    border: 2px solid #d3d3d3;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.contact textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    border-color: #6F4E37;
+}
+
+.contact button {
+    background: #6F4E37;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.contact button:hover {
+    background: #8B4513;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
